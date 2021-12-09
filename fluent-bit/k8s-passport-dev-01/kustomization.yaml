@@ -3,4 +3,3 @@ resources:
 - ../base/
 patches:
 - patch-fluent-bit-config.yaml
-- patch-fluent-bit-ds.yaml
