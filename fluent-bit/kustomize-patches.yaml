@@ -3,8 +3,3 @@ clusterPatches:
      kind: Cluster
      name: k8s-passport-dev-01
   kustomizePatch: ./k8s-passport-dev-01
-- target:
-     kind: Cluster
-     name: default
-  kustomizePatch: ./base
-
