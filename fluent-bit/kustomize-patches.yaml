@@ -2,4 +2,4 @@ clusterPatches:
 - target:
      kind: Cluster
      name: k8s-passport-dev-01
-  kustomizePatch: ./k8s-passport-dev-0123
+  kustomizePatch: ./k8s-passport-dev-01234
