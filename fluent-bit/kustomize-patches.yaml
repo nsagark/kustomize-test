@@ -1,9 +1,0 @@
-clusterPatches:
-- target:
-     kind: Cluster
-     name: k8s-passport-dev-0123
-  kustomizePatch: ./k8s-passport-dev-01
-- target:
-     kind: Cluster
-     name: dc-c-cluster
-  kustomizePatch: ./dc-c-cluster

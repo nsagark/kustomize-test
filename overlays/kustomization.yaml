@@ -1,0 +1,7 @@
+bases:
+  - ../base
+
+# namePrefix: test-
+
+patches:
+    - patch.yaml

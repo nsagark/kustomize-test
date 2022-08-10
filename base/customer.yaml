@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-deployment
+  labels:
+    app: customer
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customer
+      version: v1      
+  template:
+    metadata:
+      labels: # labels to select/identify the deployment
+        app: customer 
+        version: v1         
+    spec:     # pod spec
+      imagePullSecrets:
+      - name: jfrog-secret
+      containers: 
+      - name: customer
+        image: sreyo.jfrog.io/index-docker-dev-local/frontend-docker # image we pushed
+        #imagePullPolicy: Never
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          periodSeconds: 5 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer-service
+  labels:
+    app: customer
+spec:
+  selector:
+    app: customer 
+  ports:
+    - port: 8081
+      targetPort: 80
