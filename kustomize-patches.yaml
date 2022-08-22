@@ -1,0 +1,9 @@
+clusterPatches:
+- target:
+     kind: Cluster
+     name: eksdtest-1215
+  kustomizePatch: ./eksdtest-1215/
+- target:
+     kind: Cluster
+     name: efs-eks-2
+  kustomizePatch: ./efs-eks-2/
